@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <rect x="200" y="80" width="400" height="290" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="400" y="160" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="20">AI Content Studio</text>
+  <rect x="240" y="200" width="320" height="12" rx="6" fill="#2563eb" opacity="0.3"/>
+  <rect x="240" y="230" width="280" height="12" rx="6" fill="#3b82f6" opacity="0.2"/>
+  <rect x="240" y="260" width="300" height="12" rx="6" fill="#60a5fa" opacity="0.15"/>
+</svg>

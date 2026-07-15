@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <polyline points="100,350 200,250 300,280 400,150 500,200 600,100 700,180" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <text x="400" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="16">CloudMetrics Dashboard</text>
+</svg>

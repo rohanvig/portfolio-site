@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <text x="400" y="200" text-anchor="middle" fill="#f59e0b" font-family="system-ui" font-size="48">¿</text>
+  <polyline points="150,350 250,300 350,320 450,250 550,280 650,200" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="400" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="16">CryptoPortfolio</text>
+</svg>

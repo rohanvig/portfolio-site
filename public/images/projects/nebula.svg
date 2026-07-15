@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <circle cx="400" cy="200" r="80" fill="#2563eb" opacity="0.2"/>
+  <circle cx="400" cy="200" r="50" fill="#3b82f6" opacity="0.4"/>
+  <text x="400" y="210" text-anchor="middle" fill="#60a5fa" font-family="system-ui" font-size="24" font-weight="bold">Nebula</text>
+  <text x="400" y="320" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="16">Design System</text>
+</svg>

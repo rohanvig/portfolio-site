@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <rect x="150" y="100" width="180" height="250" rx="8" fill="#1e293b" stroke="#334155"/>
+  <rect x="370" y="100" width="180" height="250" rx="8" fill="#1e293b" stroke="#334155"/>
+  <rect x="590" y="100" width="60" height="250" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="400" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="16">TaskForge Kanban</text>
+</svg>
