@@ -2,6 +2,35 @@ import type { Project } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
+    id: "proj-5",
+    title: "AfroPay Admin Panel",
+    description:
+      "Enterprise FinTech platform for managing secure digital wallet operations, settlements, and workflows.",
+    longDescription:
+      "Developed and enhanced a secure fintech admin portal for managing digital wallet operations, deposits, withdrawals, settlements, user management, and administrative workflows in a microservices architecture.",
+    image: "/images/projects/crypto.svg",
+    techStack: [
+      "Angular",
+      "Spring Boot",
+      "Java",
+      "Microservices",
+      "Docker",
+      "AWS",
+      "MySQL",
+    ],
+    features: [
+      "Maker-Checker approval workflows with role-based access control (RBAC)",
+      "Secure digital wallet operations (deposits, withdrawals, settlements)",
+      "Responsive Angular modules integrated with Spring Boot REST APIs",
+      "Containerized microservices using Docker deployed on AWS",
+    ],
+    githubUrl: "",
+    liveUrl: "",
+    status: "completed",
+    featured: true,
+    category: "fullstack",
+  },
+  {
     id: "proj-1",
     title: "Krew — Multi-Consultancy SaaS",
     description:

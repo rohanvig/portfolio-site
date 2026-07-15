@@ -124,16 +124,18 @@ export function Projects() {
                 </ul>
 
                 <div className="mt-6 flex gap-2">
-                  <Button asChild variant="secondary" size="sm" className="flex-1">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <SiGithub className="h-4 w-4" />
-                      Code
-                    </a>
-                  </Button>
+                  {project.githubUrl && (
+                    <Button asChild variant="secondary" size="sm" className={cn("flex-1", !project.liveUrl && "w-full")}>
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <SiGithub className="h-4 w-4" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
                   {project.liveUrl && (
                     <Button asChild size="sm" className="flex-1">
                       <a

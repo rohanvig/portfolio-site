@@ -30,7 +30,7 @@ export const HERO_ROLES = [
 export const HERO_HIGHLIGHTS = {
   experience: "1.7+",
   experienceLabel: "Years Exp.",
-  projects: "4",
+  projects: "5",
   projectsLabel: "Projects",
 };
 
@@ -86,7 +86,7 @@ export const CAREER_TIMELINE = [
 
 export const STATS = [
   { label: "Years Experience", value: 1, suffix: ".7+" },
-  { label: "SaaS Projects", value: 4 },
+  { label: "SaaS Projects", value: 5 },
   { label: "Certifications", value: 2 },
   { label: "Top University Rank", value: 10, prefix: "Top " },
 ];

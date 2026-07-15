@@ -22,8 +22,10 @@ export function Contact() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validateContactForm(form);
     const errorMap: Record<string, string> = {};
@@ -37,9 +39,32 @@ export function Contact() {
     }
 
     setErrors({});
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setLoading(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message.");
+      }
+
+      setSubmitted(true);
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err: any) {
+      setSubmitError(err.message || "An unexpected error occurred.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -157,6 +182,19 @@ export function Contact() {
                 </motion.div>
               )}
 
+              {submitError && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 flex items-center gap-2 rounded-xl bg-red-500/10 p-4 text-red-600 dark:text-red-400"
+                  role="alert"
+                >
+                  <p className="text-sm font-medium">
+                    Error: {submitError}
+                  </p>
+                </motion.div>
+              )}
+
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
@@ -232,9 +270,21 @@ export function Contact() {
                 )}
               </div>
 
-              <Button type="submit" size="lg" className="mt-6 w-full">
-                <Send className="h-4 w-4" />
-                Send Message
+              <Button type="submit" size="lg" className="mt-6 w-full" disabled={loading}>
+                {loading ? (
+                  <>
+                    <svg className="mr-2 h-4 w-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    Send Message
+                  </>
+                )}
               </Button>
             </form>
           </motion.div>
